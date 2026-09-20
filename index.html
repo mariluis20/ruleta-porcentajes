@@ -157,6 +157,24 @@ input[type=number]:focus{outline:3px solid var(--acento);outline-offset:1px;bord
 .pasos li{margin-bottom:4px}
 .oculto{display:none}
 .pie{text-align:center;font-size:13px;color:var(--tenue);margin-top:18px}
+.guia{padding:16px 18px}
+.guia summary{
+  font-size:19px;font-weight:700;cursor:pointer;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:10px;
+}
+.guia summary::-webkit-details-marker{display:none}
+.guia summary::after{content:'Ver';font-size:14px;color:var(--acento);font-weight:700}
+.guia[open] summary::after{content:'Ocultar'}
+.guia p{margin:12px 0 0;font-size:15px}
+.guia ol{margin:10px 0 0;padding-left:20px;font-size:15px}
+.guia li{margin-bottom:5px}
+.ejemplo{
+  margin-top:12px;padding:12px 14px;border-radius:14px;
+  background:var(--tarjeta-2);border-left:6px solid var(--acento);
+  font-size:15px;
+}
+.ejemplo b{display:block;font-size:17px;margin-bottom:4px}
+.cuenta{font-size:18px;font-weight:700;color:var(--acento);margin:6px 0}
 @media (prefers-reduced-motion: reduce){
   #rueda{transition:none}
 }
@@ -176,6 +194,23 @@ input[type=number]:focus{outline:3px solid var(--acento);outline-offset:1px;bord
 
   <h1>Ruleta del Porcentaje</h1>
   <p class="lema">Gira la ruleta, mira qué descuento te tocó y calcula.</p>
+
+  <details class="tarjeta guia" open>
+    <summary>Cómo se saca un porcentaje</summary>
+    <p>Porcentaje quiere decir "de cada 100". Si una camisa tiene 20% de descuento, te rebajan 20 dólares de cada 100 que cuesta.</p>
+    <ol>
+      <li>Multiplicá el precio por el número del porcentaje.</li>
+      <li>Dividí ese resultado entre 100. Eso es lo que te ahorras.</li>
+      <li>Si querés saber cuánto pagás, restale ese ahorro al precio.</li>
+    </ol>
+    <div class="ejemplo">
+      <b>Ejemplo: una camisa de $50 con 20% de descuento</b>
+      <div class="cuenta">50 × 20 = 1000</div>
+      <div class="cuenta">1000 ÷ 100 = 10</div>
+      Te ahorras $10, y en la caja pagás $50 − $10 = $40.
+    </div>
+    <p>Truco rápido: el 10% de cualquier precio es moverle el punto un lugar a la izquierda. El 10% de $50 es $5,0. Y el 50% es la mitad.</p>
+  </details>
 
   <div class="tarjeta">
     <div class="marcador">
